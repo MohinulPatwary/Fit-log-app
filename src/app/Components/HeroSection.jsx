@@ -19,8 +19,7 @@ export default function HeroSection() {
                 <button
                     type="button"
                     className="mt-2 bg-[#C2F800] text-black font-bold text-sm tracking-wider uppercase px-8 py-3 rounded-md hover:bg-[#b0df00] transition-colors duration-200 shadow-lg"
-                >
-                    Browse Workouts
+                > Browse Workouts
                 </button>
             </div>
             <div className="w-full md:w-1/2 flex justify-center">
