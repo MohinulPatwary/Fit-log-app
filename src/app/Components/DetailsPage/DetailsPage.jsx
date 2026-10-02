@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
+import MyPlanBtn from '../SharedData/MyPlanBtn';
+import SaveCardBtn from '../SharedData/SaveCardBtn';
 
 const DetailsPage = ({ CardDetails }) => {
     const {
@@ -107,10 +109,12 @@ const DetailsPage = ({ CardDetails }) => {
                                 ))}
                             </div>
                         </div>
-
+                         <div className='flex'>
+                             <MyPlanBtn CardDetails={CardDetails}></MyPlanBtn>
+                          <SaveCardBtn CardDetails={CardDetails}></SaveCardBtn>
+                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

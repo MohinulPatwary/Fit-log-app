@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import MyPlanLength from './NavLength/MyPlanLength';
+import SaveListLength from './NavLength/SaveListLength';
 
 
 
 
 const NavBar = () => {
     const links = <>
-        <li><Link href="/myplan">Workouts</Link></li>
+        <li><Link href="/">Workouts</Link></li>
         <li><Link href="/myplan">My Plan</Link></li>
     </>
 
@@ -34,10 +36,9 @@ const NavBar = () => {
                         {links}
                     </ul>
                 </div>
-                <div>
-                    <a className="btn bg-white text-black hover:bg-zinc-200 border-none px-5 rounded-md text-sm font-semibold">
-                        Button
-                    </a>
+                <div className="flex items-center gap-4">
+                    <MyPlanLength></MyPlanLength>
+                    <SaveListLength></SaveListLength>
                 </div>
 
             </div>

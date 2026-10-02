@@ -20,7 +20,7 @@ async function FitlogPage({ params }) {
 
   const CardDetails = await getGymCard(id);
 
-  console.log(CardDetails);
+  // console.log(CardDetails);
 
   return (
     <div>
