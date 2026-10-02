@@ -19,8 +19,8 @@ const MyPlanCard = ({ planCard }) => {
 
     toast.error("Removed from today's plan!");
   };
-  
-   const handleMarkAsDone = () => {
+
+  const handleMarkAsDone = () => {
     const updatedPlan = gymPlan.filter(
       (item) => item.id !== planCard.id
     );
@@ -36,7 +36,7 @@ const MyPlanCard = ({ planCard }) => {
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
 
             <div className="flex min-w-0 items-center gap-4">
-            
+
               <div className="h-20 w-28 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-36">
                 <Image
                   src={planCard.image}
@@ -47,7 +47,7 @@ const MyPlanCard = ({ planCard }) => {
                 />
               </div>
 
-               <div className="min-w-0">
+              <div className="min-w-0">
                 <h1 className="truncate text-sm font-bold uppercase tracking-wide text-white sm:text-base">
                   {planCard.name}
                 </h1>
@@ -90,7 +90,7 @@ const MyPlanCard = ({ planCard }) => {
                   transition
                   hover:bg-lime-300
                   sm:flex-none"
-                  onClick={handleMarkAsDone}>
+                onClick={handleMarkAsDone}>
                 ✓ Mark as Done
               </button>
 
@@ -102,7 +102,7 @@ const MyPlanCard = ({ planCard }) => {
                   text-white
                   transition
                   hover:text-red-400"
-               onClick={handleRemovePlan}>
+                onClick={handleRemovePlan}>
                 ×
               </button>
 

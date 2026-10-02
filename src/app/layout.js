@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
         <NavBar></NavBar>
         <div>{children}</div>
         <Footer></Footer>
+          <ToastContainer />
         </GymContextProvider>
-        <ToastContainer />
       </body>
     </html>
   );
