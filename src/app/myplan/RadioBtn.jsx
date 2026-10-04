@@ -11,7 +11,7 @@ const RadioBtn = () => {
   const savedLower = ["Saved Detail 1", "Saved Detail 2"];
 
   // 2. STATE: Tracks which option is active ("plan" or "saved")
-  const [selectedOption, setSelectedOption] = useState<"plan" | "saved">("plan");
+  const [selectedOption, setSelectedOption] = useState;
 
   // 3. DECISION LOGIC: Choose which data to show based on state
   let activeUpperData;
@@ -45,7 +45,7 @@ const RadioBtn = () => {
 
   return (
     <div>
-      {/* --- UPPER SECTION --- */}
+   
       <div>
         <h2>Upper Components</h2>
         <div>{activeUpperData[0]}</div>
@@ -54,7 +54,7 @@ const RadioBtn = () => {
 
       <hr />
 
-      {/* --- MIDDLE BUTTONS (RADIO TYPE) --- */}
+   
       <div>
         <button onClick={() => setSelectedOption("plan")}>
           Select Plan
@@ -69,7 +69,7 @@ const RadioBtn = () => {
 
       <hr />
 
-      {/* --- LOWER SECTION --- */}
+      
       <div>
         <h2>Lower Components</h2>
         {lowerContent}

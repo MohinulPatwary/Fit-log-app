@@ -65,7 +65,7 @@ const SaveCardList = ({ planCard }) => {
               </div>
             </div>
 
-            {/* RIGHT */}
+           
             <div className="flex w-full items-center gap-2 lg:w-auto">
 
               <Link href={`/fit-locks/${planCard.id}`}>
