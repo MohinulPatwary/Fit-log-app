@@ -1,6 +1,10 @@
 import React from 'react';
 
-const MyPlanData = () => {
+const MyPlanData = ({ gymPlan }) => {
+
+    const sum = gymPlan.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue.rating;
+}, 0);
     return (
     
 <div className="w-full">

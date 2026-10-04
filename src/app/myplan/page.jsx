@@ -8,8 +8,29 @@ import SaveCardList from "./SaveCardList";
 import MyPlanData from "./MyplanDisplay/MyPlanData";
 
 export default function MyPlanPage() {
-  const [selectedTab, setSelectedTab] = useState("plan");
-  const { gymPlan, savelist } = useContext(GymContext);
+const [selectedTab, setSelectedTab] = useState("plan");
+const { gymPlan, savelist } = useContext(GymContext);
+const [sortBy, setSortBy] = useState("duration");
+
+const sortPlan = (items) => {
+  const sortedPlan = [...items];
+
+  if (sortBy === "duration") { 
+    sortedPlan.sort((a, b) => b.duration - a.duration);
+  } else if (sortBy === "calories") { 
+    sortedPlan.sort((a, b) => b.caloriesBurned - a.caloriesBurned);
+  } else if (sortBy === "rating") { 
+    sortedPlan.sort((a, b) => b.rating - a.rating);
+  }
+
+  return sortedPlan;
+};
+
+const sortedMyPlan = sortPlan(gymPlan);
+const sortedSaveList = sortPlan(savelist);
+
+console.log(sortedMyPlan, "sortedMyPlan");
+  console.log(sortedSaveList, "sortedSaveList");
 
   const isPlanSelected = selectedTab === "plan";
 
@@ -24,15 +45,15 @@ export default function MyPlanPage() {
         </p>
       </div>
       <div className="mb-6">
-     
-          {isPlanSelected
-            ? <MyPlanData/>
-            : "Your saved custom routines and bookmarked workouts."}
-       
+
+        {isPlanSelected
+          ? <MyPlanData gymPlan={sortedMyPlan} />
+          : "Your saved custom routines and bookmarked workouts."}
+
       </div>
 
-  
-      <div className="my-6 flex align-center">
+<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="my-6 flex">
         <div className="inline-flex rounded-lg bg-zinc-800 p-1 border border-zinc-700">
           <button
             type="button"
@@ -56,16 +77,28 @@ export default function MyPlanPage() {
             Saved
           </button>
         </div>
+      
       </div>
+        <div>
+          <select defaultValue="Pick a font" className="select select-ghost text-sm text-zinc-400 sm:text-base" 
+          value={sortBy}
+           onChange={(e) => setSortBy(e.target.value)}>
+            <option disabled={true}>Sort By</option>
+            <option value="duration">Duration</option>
+            <option value="calories">Calories</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+         </div>
 
       <div className="w-full bg-transparent p-3 sm:p-5">
         <div className="space-y-4">
           <div className="mt-1 text-sm text-zinc-400 sm:text-base">
             {isPlanSelected ? (
-              gymPlan.length === 0 ? (
+              sortedMyPlan.length === 0 ? (
                 <EmptyData />
               ) : (
-                gymPlan.map((planCard) => (
+                sortedMyPlan.map((planCard) => (
                   <MyPlanCard
                     key={planCard.id}
                     planCard={planCard}
@@ -77,7 +110,7 @@ export default function MyPlanPage() {
                 gymPlan.length === 0 ? (
                   <EmptyData />
                 ) : (
-                  savelist.map((planCard) => (
+                  sortedSaveList.map((planCard) => (
                     <SaveCardList
                       key={planCard.id}
                       planCard={planCard}
