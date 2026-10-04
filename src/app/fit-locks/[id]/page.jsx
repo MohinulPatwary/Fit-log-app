@@ -10,7 +10,7 @@ const getGymCard = async (id) => {
 
     return data;
   } catch (error) {
-    console.error("Error fetching gym data:", error);
+    // console.error("Error fetching gym data:", error);
     return null;
   }
 };
