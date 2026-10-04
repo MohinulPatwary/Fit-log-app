@@ -109,7 +109,7 @@ const DetailsPage = ({ CardDetails }) => {
                                 ))}
                             </div>
                         </div>
-                         <div className='flex'>
+                         <div className='flex items-center gap-4'>
                              <MyPlanBtn CardDetails={CardDetails}></MyPlanBtn>
                           <SaveCardBtn CardDetails={CardDetails}></SaveCardBtn>
                          </div>
