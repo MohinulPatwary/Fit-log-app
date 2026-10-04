@@ -23,7 +23,10 @@ const MyPlanBtn = ({ CardDetails }) => {
 
     return (
         <div>
-            <button className="bg-[#CCFF00] text-black p-4 border border-black rounded-full text-sm font-bold hover:-translate-y-0.5 active:translate-y-0]" onClick={() => handleMyPlan()}>{` Add to today's plan`}</button>
+            <button className="bg-[#CCFF00] text-black p-4 border
+             border-black rounded-full text-sm font-bold 
+             hover:-translate-y-0.5 active:translate-y-0]" 
+            onClick={() => handleMyPlan()}>{` Add to today's plan`}</button>
         </div>
     );
 };
