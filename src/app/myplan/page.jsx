@@ -108,7 +108,7 @@ export default function MyPlanPage() {
               )
             ) : (
               (
-                gymPlan.length === 0 ? (
+                sortedSaveList.length === 0 ? (
                   <EmptyData />
                 ) : (
                   sortedSaveList.map((planCard) => (
